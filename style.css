@@ -8,6 +8,9 @@
 }
 body{
     background: #eee;
+    margin:0;
+    width: auto;
+    height: auto;
 }
 .heading{
     color: #444;
