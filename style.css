@@ -12,6 +12,7 @@ body{
     width: auto;
     height: auto;
     font-size: large;
+    
 }
 .heading{
     color: #444;
@@ -25,6 +26,7 @@ grid-template columns:2fr 1fr;
 gap: 15px;
 align-items:flex-start;
 padding:5px 5%;
+position:contain;
 }
 .container.main-video{
     background: #fff;
@@ -100,4 +102,6 @@ background: #292929;
         
                 }
         }
-   
+   .vid1{
+    transform: scale(1);
+   }
