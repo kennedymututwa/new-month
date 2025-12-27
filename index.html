@@ -3,78 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="46561780.jpg" type="image/x-icon">
+    <title>Video Playlist</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            background: #eee;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .heading {
+            color: #444;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* MOBILE FIRST */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        /* MAIN VIDEO */
+        .main-video {
+            background: #fff;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .main-video video {
+            width: 100%;
+            max-height: 220px;
+            border-radius: 8px;
+        }
+
+        .main-video .title {
+            color: #333;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* VIDEO LIST */
+        .video-list {
+            background: #fff;
+            border-radius: 8px;
+            overflow-y: auto;
+        }
+
+        .video-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .video-list::-webkit-scrollbar-track {
+            background: #ccc;
+        }
+
+        .video-list::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 20px;
+        }
+
+        /* EACH VIDEO ITEM */
+        .vid {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: #f7f7f7;
+            border-radius: 6px;
+            margin: 8px;
+            padding: 8px;
+            border: 1px solid rgba(0,0,0,.1);
+            cursor: pointer;
+        }
+
+        .vid video {
+            width: 120px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .vid:hover {
+            background: #eee;
+        }
+
+        .vid.active {
+            background: #292929;
+        }
+
+        .vid.active .title {
+            color: #fff;
+        }
+
+        .vid .title {
+            color: #333;
+            font-size: 0.85rem;
+        }
+
+        /* TABLET & DESKTOP */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .main-video video {
+                max-height: 420px;
+            }
+
+            .video-list {
+                max-height: 420px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-   
-    <h3 class="heading">Happ new year fam</h3>
+
+    <h3 class="heading">Happy New Year Fam</h3>
+
     <div class="container">
+
+        <!-- MAIN VIDEO -->
         <div class="main-video">
-            <div class="video" id="homevideo" width="100%px" height="100%" >
-                <video src="WhatsApp Video 2024-01-01 at 04.29.42.mp4" controls muted  webkit-playsinline="" width="100%" height="100%" muted loop id="myVideo"></video>
-                    <h2 class="title"><b>01. l thank God/Swahili song/</br>
-                    Manage well the controls, next time will do better/Kennedy</b></h2>
-            </div> 
+            <video src="WhatsApp Video 2024-01-01 at 04.29.42.mp4" controls muted playsinline></video>
+            <h2 class="title">
+                01. I Thank God / Swahili Song
+            </h2>
         </div>
+
+        <!-- VIDEO LIST -->
         <div class="video-list">
+
             <div class="vid active">
-                <video src="WhatsApp Video 2024-01-01 at 04.53.21.mp4" controls  muted  webkit-playsinline="" width="100%" height="100%" muted loop id="myVideo"></video>
-                <h2 class="title"><b>02.OLD Soweto/crhristmas song/South Africa </b></h2>
+                <video src="WhatsApp Video 2024-01-01 at 04.29.42.mp4" muted playsinline></video>
+                <h2 class="title">01. I Thank God / Swahili Song</h2>
             </div>
-            
+
             <div class="vid">
-                <video src="WhatsApp Video 2024-01-01 at 05.00.38.mp4" controls  muted ></video>
-                <h2 class="title"><b>03.Animated cartoon/Newyear</b></h2>
+                <video src="WhatsApp Video 2024-01-01 at 04.53.21.mp4" muted playsinline></video>
+                <h2 class="title">02. Old Soweto / Christmas Song</h2>
             </div>
+
             <div class="vid">
-                <video src="WhatsApp Video 2024-01-01 at 05.55.00.mp4" controls  muted  webkit-playsinline="" width="100%" height="100%" muted loop id="myVideo" ></video>
-                <h2 class="title"><b>04.A Song For Strength</b></h2>
+                <video src="WhatsApp Video 2024-01-01 at 05.00.38.mp4" muted playsinline></video>
+                <h2 class="title">03. Animated Cartoon / New Year</h2>
             </div>
+
             <div class="vid">
-                <video src="WhatsApp Video 2024-12-15 at 13.25.37.mp4" controls  muted  webkit-playsinline="" width="100%" height="100%" muted loop id="myVideo" ></video>
-                <h2 class="title"><b>05.SDA Song for Zambian</b></h2>
+                <video src="WhatsApp Video 2024-01-01 at 05.55.00.mp4" muted playsinline></video>
+                <h2 class="title">04. A Song for Strength</h2>
             </div>
+
             <div class="vid">
-                <video src="WhatsApp Video 2024-12-15 at 13.26.02.mp4" controls  muted  webkit-playsinline="" width="100%" height="100%" muted loop id="myVideo" ></video>
-                <h2 class="title"><b>06.Zambians Independece performance</b></h2>
+                <video src="WhatsApp Video 2024-12-15 at 13.25.37.mp4" muted playsinline></video>
+                <h2 class="title">05. SDA Song for Zambia</h2>
             </div>
+
             <div class="vid">
-                <video src="Last Christmas - Music Travel Love & Friends.mp4" controls  muted webkit-playsinline="" width="100%" height="100%" muted loop id="myVideo" ></video>
-                <h2 class="title"><b>07. My Christmas Love Song </b></h2>
+                <video src="WhatsApp Video 2024-12-15 at 13.26.02.mp4" muted playsinline></video>
+                <h2 class="title">06. Zambia Independence Performance</h2>
             </div>
-            <div class="vid1">
-                <video src="WhatsApp Video 2024-01-01 at 04.55.25.mp4" controls  muted ></video>
-                <h2 class="title"><b>08. How Meihkiak celerabrate</b></h2>
+
+            <div class="vid">
+                <video src="Last Christmas - Music Travel Love & Friends.mp4" muted playsinline></video>
+                <h2 class="title">07. My Christmas Love Song</h2>
             </div>
+
         </div>
     </div>
+
     <script>
-        let listVideo =document.querySelector('.video-list.vid');
-        let mainVideo =document.querySelector('.main-video video');
-        let title = document.querySelector('.main-video.title');
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
 
-        listVideo.forEach(video=>{
-            video.onclick =()=>{
-listVideo.forEach(vid => vid.classlist.remove('active'))
-video.classlist.add('active')
-if(video.classlist.contains('active')){
-let src=video.children[0].getAttribute('src')
-mainVideo.src=src;
-let text=video.children[1]innerHTML;
-video_count =1;
-videoPlayer = document.getElementById("homevideo");
+        listVideo.forEach(video => {
+            video.addEventListener('click', () => {
 
-function run(){
-        video_count++;
-        if (video_count == 16) video_count = 1;
-        var nextVideo = "video"+video_count+".mp4";
-        videoPlayer.src = nextVideo;
-        videoPlayer.play();
-   };
-};
-            };
+                listVideo.forEach(v => v.classList.remove('active'));
+                video.classList.add('active');
+
+                let src = video.querySelector('video').getAttribute('src');
+                let text = video.querySelector('.title').innerHTML;
+
+                mainVideo.src = src;
+                title.innerHTML = text;
+                mainVideo.play();
+            });
         });
     </script>
+
 </body>
 </html>
